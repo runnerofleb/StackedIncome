@@ -1,1 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Remote Income Starter Kit | Stacked Income</title>
+  <meta name="description" content="Get the Free Remote Income Starter Kit: AI resume prompts, LinkedIn templates, recruiter outreach scripts, remote job tracker, and 100 remote companies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050711;
+      --bg-soft: #0b1020;
+      --card: rgba(255, 255, 255, 0.075);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #ffffff;
+      --muted: #aeb7cb;
+      --line: rgba(255, 255, 255, 0.14);
+      --gold: #f5c542;
+      --gold-2: #ffdf7a;
+      --blue: #4f8cff;
+      --green: #39d98a;
+      --danger: #ff5c7a;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 8%, rgba(79, 140, 255, 0.28), transparent 28%),
+        radial-gradient(circle at 78% 12%, rgba(245, 197, 66, 0.22), transparent 26%),
+        radial-gradient(circle at 50% 70%, rgba(57, 217, 138, 0.08), transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 20px;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #f28b25);
+      color: #080b14;
+      font-weight: 950;
+      box-shadow: 0 12px 35px rgba(245, 197, 66, 0.22);
+    }
+
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 14px;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 42px;
+      align-items: center;
+      padding: 42px 0 74px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(245, 197, 66, 0.35);
+      border-radius: 999px;
+      background: rgba(245, 197, 66, 0.09);
+      color: var(--gold-2);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 22px var(--gold);
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, var(--gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-copy strong {
+      color: #fff;
+    }
+
+    .form-card {
+      width: 100%;
+      max-width: 570px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(18px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    input {
+      width: 100%;
+      min-height: 58px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 17px;
+      background: rgba(0, 0, 0, 0.22);
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: rgba(174, 183, 203, 0.8);
+    }
+
+    button,
+    .button {
+      min-height: 58px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--gold), #f28b25);
+      color: #0a0d16;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 42px rgba(245, 197, 66, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    button:hover,
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 52px rgba(245, 197, 66, 0.36);
+    }
+
+    .form-note {
+      color: rgba(174, 183, 203, 0.8);
+      font-size: 13px;
+      padding: 12px 6px 2px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.055);
+      border-radius: 18px;
+      padding: 14px 16px;
+      min-width: 150px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mockup-wrap {
+      position: relative;
+    }
+
+    .glow {
+      position: absolute;
+      inset: 8% 3%;
+      background: linear-gradient(135deg, rgba(245, 197, 66, 0.32), rgba(79, 140, 255, 0.28));
+      filter: blur(45px);
+      opacity: 0.65;
+      z-index: 0;
+    }
+
+    .mockup {
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 36px;
+      padding: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.055)),
+        rgba(5, 7, 17, 0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+    }
+
+    .mockup::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 15%, rgba(245, 197, 66, 0.22), transparent 34%);
+      pointer-events: none;
+    }
+
+    .kit-cover {
+      position: relative;
+      min-height: 560px;
+      border-radius: 27px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(5, 7, 17, 0.3), rgba(5, 7, 17, 0.9)),
+        linear-gradient(135deg, #10182f, #080a12 58%, #2c210a);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kit-cover::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      right: -160px;
+      top: -90px;
+      background: radial-gradient(circle, rgba(245, 197, 66, 0.42), transparent 66%);
+    }
+
+    .kit-cover::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -80px -20px;
+      height: 260px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.7), transparent),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.1) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 60px);
+      transform: perspective(550px) rotateX(58deg);
+      transform-origin: bottom;
+      opacity: 0.7;
+    }
+
+    .kit-top,
+    .kit-bottom {
+      position: relative;
+      z-index: 2;
+    }
+
+    .kit-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(245, 197, 66, 0.14);
+      color: var(--gold-2);
+      border: 1px solid rgba(245, 197, 66, 0.35);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+
+    .kit-title {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      max-width: 430px;
+      font-weight: 950;
+    }
+
+    .kit-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .kit-list div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 13px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      color: #eef3ff;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(57, 217, 138, 0.14);
+      color: var(--green);
+      flex: 0 0 auto;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--gold-2);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.8vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.065em;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.24);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(245, 197, 66, 0.13);
+      color: var(--gold-2);
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      letter-spacing: -0.035em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .problem {
+      border: 1px solid rgba(255, 92, 122, 0.25);
+      background: rgba(255, 92, 122, 0.06);
+    }
+
+    .solution {
+      border: 1px solid rgba(57, 217, 138, 0.25);
+      background: rgba(57, 217, 138, 0.06);
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #e8edf9;
+      line-height: 1.5;
+    }
+
+    .x {
+      color: var(--danger);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .tick {
+      color: var(--green);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.055);
+    }
+
+    .step::before {
+      content: counter(step);
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #f28b25);
+      color: #060813;
+      font-weight: 950;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .step span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .cta {
+      padding: 34px;
+      border: 1px solid rgba(245, 197, 66, 0.28);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(245, 197, 66, 0.22), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 14px;
+    }
+
+    .mini-form {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .mini-form .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      color: rgba(174, 183, 203, 0.78);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .split,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mockup {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .nav-pill {
+        display: none;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      button,
+      .button {
+        width: 100%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .kit-cover {
+        min-height: 500px;
+        padding: 22px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .cta {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Stacked Income home">
+        <span class="logo">SI</span>
+        <span>Stacked Income</span>
+      </a>
+      <a class="nav-pill" href="#claim">
+        <span>Free download</span>
+        <strong>Remote Income Starter Kit</strong>
+      </a>
+    </nav>
+
+    <section class="hero" id="top">
+      <div>
+        <div class="badge"><span class="badge-dot"></span> Free starter kit for remote job seekers</div>
+        <h1>Stop Applying Blindly. <span class="gradient-text">Start Standing Out.</span></h1>
+        <p class="hero-copy">
+          Get the free <strong>Remote Income Starter Kit</strong> and learn how to improve your resume, optimize LinkedIn, track remote applications, message recruiters, and build a better remote job search system.
+        </p>
+
+        <form class="form-card" id="claim" action="YOUR_FORM_ENDPOINT_HERE" method="POST">
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+            <button type="submit">Send Me The Free Kit</button>
+          </div>
+          <p class="form-note">No fluff. No spam. Just remote role systems you can use this week.</p>
+        </form>
+
+        <div class="hero-stats" aria-label="What is inside the starter kit">
+          <div class="stat"><strong>100</strong><span>Remote companies</span></div>
+          <div class="stat"><strong>7-Day</strong><span>Remote job sprint</span></div>
+          <div class="stat"><strong>AI</strong><span>Resume prompts</span></div>
+        </div>
+      </div>
+
+      <div class="mockup-wrap" aria-label="Remote Income Starter Kit mockup">
+        <div class="glow"></div>
+        <div class="mockup">
+          <div class="kit-cover">
+            <div class="kit-top">
+              <div class="kit-label">Free Download</div>
+              <div class="kit-title">Remote Income Starter Kit</div>
+            </div>
+            <div class="kit-bottom">
+              <div class="kit-list">
+                <div><span class="check">✓</span> AI Resume Prompts</div>
+                <div><span class="check">✓</span> LinkedIn Templates</div>
+                <div><span class="check">✓</span> Recruiter Scripts</div>
+                <div><span class="check">✓</span> Remote Job Tracker</div>
+                <div><span class="check">✓</span> 100 Remote Companies</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">What you get</div>
+        <h2>The remote job search system most people are missing.</h2>
+        <p class="section-text">This kit gives you the core assets to stop guessing and start building a clear, repeatable remote job search process.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">✍️</div>
+          <h3>AI Resume Prompts</h3>
+          <p>Use AI to rewrite resume bullets, match job descriptions, and sharpen your real experience without sounding generic.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔗</div>
+          <h3>LinkedIn Templates</h3>
+          <p>Build a profile that tells recruiters what you do, who you help, and why you are worth contacting.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📬</div>
+          <h3>Outreach Scripts</h3>
+          <p>Send simple, human messages to recruiters and hiring managers so you are not just another application.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Application Tracker</h3>
+          <p>Track roles, contacts, follow-ups, and outcomes so your job search becomes a pipeline, not a guessing game.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🏢</div>
+          <h3>100 Remote Companies</h3>
+          <p>Start with a curated company research list across tech, support, sales, marketing, operations, and flexible teams.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔥</div>
+          <h3>7-Day Remote Sprint</h3>
+          <p>Follow a simple 7-day action plan to choose your role, fix your positioning, apply better, and follow up.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div class="card problem">
+          <div class="eyebrow">The problem</div>
+          <h2>Remote jobs are not dead. Generic applications are.</h2>
+          <div class="list">
+            <div class="list-item"><span class="x">✕</span><span>Using the same resume for every role</span></div>
+            <div class="list-item"><span class="x">✕</span><span>Having a weak or confusing LinkedIn profile</span></div>
+            <div class="list-item"><span class="x">✕</span><span>Applying online and waiting with no outreach</span></div>
+            <div class="list-item"><span class="x">✕</span><span>Not tracking applications or follow-ups</span></div>
+            <div class="list-item"><span class="x">✕</span><span>Going into interviews without strong stories</span></div>
+          </div>
+        </div>
+
+        <div class="card solution">
+          <div class="eyebrow">The system</div>
+          <h2>Become easier to understand, easier to trust, and easier to hire.</h2>
+          <div class="list">
+            <div class="list-item"><span class="tick">✓</span><span>Pick one target role so your positioning is clear</span></div>
+            <div class="list-item"><span class="tick">✓</span><span>Rewrite your resume around proof, outcomes, and keywords</span></div>
+            <div class="list-item"><span class="tick">✓</span><span>Optimize LinkedIn so recruiters understand your value fast</span></div>
+            <div class="list-item"><span class="tick">✓</span><span>Message recruiters and hiring managers after applying</span></div>
+            <div class="list-item"><span class="tick">✓</span><span>Follow up, track results, and improve every week</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">Your first 7 days</div>
+        <h2>Build momentum in one week.</h2>
+        <p class="section-text">The kit includes a simple sprint you can start immediately.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div><strong>Pick your target remote role</strong><span>Stop applying to everything. Choose one role for the next 30 days.</span></div></div>
+        <div class="step"><div><strong>Fix your resume positioning</strong><span>Update your headline, summary, and strongest bullet points.</span></div></div>
+        <div class="step"><div><strong>Optimize your LinkedIn</strong><span>Make your profile clear, specific, and recruiter-friendly.</span></div></div>
+        <div class="step"><div><strong>Build your remote company list</strong><span>Find companies that hire for your target role and track them.</span></div></div>
+        <div class="step"><div><strong>Send 5 stronger applications</strong><span>Tailor your resume and apply with intention.</span></div></div>
+        <div class="step"><div><strong>Message 10 recruiters</strong><span>Use short outreach scripts to start conversations.</span></div></div>
+        <div class="step"><div><strong>Follow up and review your numbers</strong><span>Track what worked, what failed, and what to improve next week.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">Free download</div>
+          <h2>Ready to stop applying blindly?</h2>
+          <p class="section-text">Get the Remote Income Starter Kit and start building a better remote job search system this week.</p>
+        </div>
+        <form class="mini-form" action="YOUR_FORM_ENDPOINT_HERE" method="POST">
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+            <button type="submit">Send Me The Free Kit</button>
+          </div>
+          <p class="form-note">Stack income. Live globally. Build freedom faster.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Stacked Income. Educational content only. Results depend on your background, effort, market conditions, and consistency.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
